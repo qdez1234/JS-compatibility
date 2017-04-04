@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        body{
+        	height: 1000px;
+        }
+        #add{
+        	height: 100px;
+        	width: 100px;
+        	background-color: red;
+        }
+	</style>
+</head>
+<body>
+	
+    <div id="add"></div>
+ 
+
+     <script>
+              /*  在兼容性中一般牵扯到IE就是documentElement
+              
+               //.............滚动条的卷曲高度.................
+
+               //DOM中就是 document.body.scrollTop
+
+               //IE中就是  document.documentElement.scrollTop
+
+             window.onscroll=function(){
+              var STop=document.body.scrollTop||document.documentElement.scrollTop
+                  console.log(STop)
+             }*/
+
+             /*
+             
+             //.................可视区域中的宽高(conent部分只是自己眼睛能看见到的部分的宽高,当我们把浏览器的窗口缩小的时候也会随之改变....................
+             
+             //DOM中就是document.body.clientWidth
+             
+             //IE中就是document.documentElement.width
+             
+             var width=document.body.clientWidth
+
+             console.log(width)
+
+
+             */
+            
+            
+           /*  
+
+           //................获取事件对象.....................
+             
+             //兼容性写法,就是  var evt=event||window.event
+             
+             var add=document.getElementById("add")
+             add.onclick=function(event){
+                var evt=event||window.event
+                console.log(evt)
+             }
+
+           */
+          
+
+
+          //获取事件对象中的事件目标   evt.target||evt.srcElement
+          
+          //  var evt=event||window.event
+          
+          //DOM中的就是   evt.target
+                       
+          //ie中就是      evt.srcElement              
+
+
+          //..................阻止事件的默认行为.....................
+          //DOM中的就是 event.preventDefault()
+          //IE中的就是  event.returnValue=false;
+          
+          //if(event.preventDefault){
+          //
+          //}
+          //else{
+          // event.returnValue=false
+          //}
+
+          
+         /*       // 阻止事件冒泡  
+          stopPropagation: function (event) {  
+              if (event.stopPropagation) {  
+                  event.stopPropagation();  
+              }  
+              else {  
+                  event.cancelBubble = true;  
+              }  
+          },    
+         */
+        
+
+
+        /*
+              DOM节点相关的问题   
+
+         function nextnode(obj){//获取下一个兄弟节点
+    if (obj.nextElementSibling) {
+      return obj.nextElementSibling;
+    } else{
+      return obj.nextSibling;
+    };
+  }
+  function prenode(obj){//获取上一个兄弟节点
+    if (obj.previousElementSibling) {
+      return obj.previousElementSibling;
+    } else{
+      return obj.previousSibling;
+    };
+  }
+  function firstnode(obj){//获取第一个子节点
+    if (obj.firstElementChild) {
+      return obj.firstElementChild;//非IE678支持
+    } else{
+      return obj.firstChild;//IE678支持
+    };
+  }
+  function lastnode(obj){//获取最后一个子节点
+    if (obj.lastElementChild) {
+      return obj.lastElementChild;//非IE678支持
+    } else{
+      return obj.lastChild;//IE678支持
+     
+         */
+        
+
+
+        /*
+         事件监听的兼容   
+
+
+         DOM中的就是 dom.addEventListener("click",fn)
+
+         IE中的就是  dom.attachEvent("click",fn)
+
+
+
+
+
+         */
+
+
+     </script>
+
+</body>
+</html>
