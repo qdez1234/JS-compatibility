@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	     
+
+	       <script>
+    /*
+      cookie是一个键值对的形式,如果需要一次储存多个名/对,可以使用分好加上空格隔开
+
+      documnet.cookie="userId=828; UserName=888";
+
+      记得需要使用 escape()函数来将我们的内容进行编码转格式
+
+      当我们需要得到cookie值的时候,记得使用unescape()函数来将我们的内容进行解码
+     */ 
+     
+
+
+
+     /*
+     ............... 获取cookie值.............
+     //设置两个cookie 
+           document.cookie="userId=828"; 
+           document.cookie="userName=hulk"; 
+           //获取cookie字符串 
+           var strCookie=document.cookie; 
+           //将多cookie切割为多个名/值对 
+           var arrCookie=strCookie.split("; "); 
+           var userId; 
+           //遍历cookie数组，处理每个cookie对 
+           for(var i=0;i<arrCookie.length;i++){ 
+           var arr=arrCookie[i].split("="); 
+           //找到名称为userId的cookie，并返回它的值 
+           if("userId"==arr[0]){ 
+           userId=arr[1]; 
+           break; 
+           } 
+           } 
+           alert(userId); 
+
+      */
+     
+
+     /*
+     ..............jquery.cookie.js.................
+
+     ****记住 当没有指明cookie的有效时间时,所创建的cookie有效期默认到用户关闭浏览器为止,有称呼为回话cookie
+     
+     1.0 创建一个cookie并且设置有效期为七天,路径为默认的
+
+     $.cookie(name,value,{expires:7,path:"/"})
+
+     获取cookie就是直接设置$.cookie("cookie名")=>返回cookie值
+
+     删除cookie就是直接设置$.cookie("cookie名",null)=>通过传递null为cookie的值即可
+
+
+     
+
+
+      */
+   
+	       </script>
+</body>
+</html>
